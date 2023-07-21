@@ -1,0 +1,8 @@
+.rootCard {
+    min-width: 275px;
+    border-radius: 20px;
+}
+.rootContent {
+    display: flex;
+    align-items: center;
+}

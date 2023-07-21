@@ -1,16 +1,14 @@
 "use client";
 
-import {FormControlLabel, Grid, Stack} from "@mui/material";
+import { FormControlLabel, Grid, Stack, Switch} from "@mui/material";
 import EventDetail from "@/app/components/EventDetail";
 import {ThemeProvider} from "@mui/material/styles";
 import {darkTheme, lightTheme} from "@/app/theme";
 import {useEffect, useState} from "react";
-import {Switch} from "@mui/base";
 import Event from "@/app/components/Event";
 import * as React from "react";
 import SortEvent from "@/app/components/sortEvents";
 import PageTitle from "@/app/components/PageTitle";
-import './page.module.css';
 import LoadingComponent from "@/app/components/Loading";
 import {propsEvent} from "@/app/types/event";
 
@@ -122,7 +120,7 @@ export default function Home() {
           <SortEvent listFilter={categories} onClickItem={handleSelectFilter} selected={activeFilter}/>
 
           <Stack spacing={2} sx={{width: '100%'}}>
-              {eventsFiltered.map((event: propsEvent) => <div key={event._id} className="box">
+              {eventsFiltered.map((event: propsEvent) => <div key={event._id}>
                   <Event title={event.title} image={event?.image} checked={event?.subscribe} onClickEvent={handleSelectEvent} id={event._id}/>
               </div>)}
           </Stack>

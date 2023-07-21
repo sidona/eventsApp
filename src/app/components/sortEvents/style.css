@@ -1,0 +1,12 @@
+.contentSort {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.contentFilters {
+    display: flex;
+    align-items: center;
+}
+.chipContent {
+    width: 80px;
+    margin-left: 4px;
+}

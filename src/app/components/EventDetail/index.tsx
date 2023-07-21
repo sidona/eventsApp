@@ -5,11 +5,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import {propsEvent} from "@/app/types/event";
+import './style.css';
 
 export default function EventDetail({event} : propsEvent) {
     return (
-        <Card sx={{ minWidth: 275, borderRadius: '20px' }}>
-            <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
+        <Card className="rootCard">
+            <CardContent className="rootContent">
                 <Image
                     src="/vercel.svg"
                     alt="Vercel Logo"

@@ -10,8 +10,8 @@ type propsTitle = {
 export default function PageTitle({title, subtitle}: propsTitle) {
 
     return (
-        <Box sx={{textAlign: 'left'}}>
-            <Typography variant="h5" component="div">
+        <Box sx={{textAlign: 'left', marginBottom: '20px'}}>
+            <Typography variant="h5" color="text.primary">
                 {title}
             </Typography>
             <Typography color="text.secondary">

@@ -1,10 +1,15 @@
 import {NextResponse} from "next/server";
 import {MongoClient, ObjectId} from 'mongodb';
-const uri = "mongodb+srv://sidmadalina:xxxxx@cluster0.m4zswcc.mongodb.net/?retryWrites=true&w=majority"
-export async function GET() {
+// take this from env file
+const uri = "mongodb+srv://sidmadalina:xxxx@cluster0.m4zswcc.mongodb.net/?retryWrites=true&w=majority"
 
+//can create a separate file services for connection function
+const connection = async () => {
         const client = await MongoClient.connect(uri);
-        const db = client.db("EventsAPP");
+        return client.db("EventsAPP");
+}
+export async function GET() {
+        const db = await connection();
 
         const res = await db
             .collection("Events")
@@ -17,8 +22,7 @@ export async function GET() {
 };
 export async function PUT(request: Request) {
         const res = await request.json()
-        const client = await MongoClient.connect(uri);
-        const db = client.db("EventsAPP");
+        const db = await connection();
         const dataResponse = await db
             .collection("Events")
             .updateOne(
