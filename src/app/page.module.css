@@ -227,3 +227,7 @@
     transform: rotate(0deg);
   }
 }
+.box:nth-child(odd){
+  text-align: -webkit-right;
+
+}
